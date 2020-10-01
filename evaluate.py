@@ -2,6 +2,8 @@
 #
 # This work is made available under the Nvidia Source Code License-NC.
 # To view a copy of this license, check out LICENSE.md
+
+#import libraries
 import argparse
 import glob
 
@@ -16,6 +18,7 @@ from imaginaire.utils.trainer import (get_model_optimizer_and_scheduler,
                                       get_trainer, set_random_seed)
 
 
+# define Function 
 def parse_args():
     parser = argparse.ArgumentParser(description='Training')
     parser.add_argument('--config',
@@ -29,7 +32,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-
+# define Function
 def main():
     args = parse_args()
     set_affinity(args.local_rank)
